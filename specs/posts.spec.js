@@ -154,8 +154,8 @@ describe('Posts', () => {
       expect(response).to.have.status(200)
       expect(comments.every(comment => comment.postId === 2)).to.be.true
     })
-    /*Sajnos bármit tudok itt megadni és beteszi egy property-be üres tömbként ami elég furcsán néz ki
-      gondolom ez baj*/
+    /*Sajnos bármit tudok itt megadni és beteszi a JSON-ba key-ként és add neki egy üres tömböt értékként
+      ami elég furcsán néz kigondolom ez baj*/
     it("should be  able to embed  only valid child properties", async function () {
       const response = await chakram.get(api.url('posts/2?_embed=It_should_not_appear'))
       expect(response).to.have.status(500)
